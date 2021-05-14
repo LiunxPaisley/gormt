@@ -14,8 +14,8 @@ var EImportsHead = map[string]string{
 var TypeMysqlDicMp = map[string]string{
 	"smallint":            "int16",
 	"smallint unsigned":   "uint16",
-	"int":                 "int",
-	"int unsigned":        "uint",
+	"int":                 "int32",
+	"int unsigned":        "uint32",
 	"bigint":              "int64",
 	"bigint unsigned":     "uint64",
 	"varchar":             "string",
@@ -59,7 +59,7 @@ var TypeMysqlMatchList = []struct {
 	{`^(double)[(]\d+,\d+[)] unsigned`, "float64"},
 	{`^(tinyint)[(]\d+[)]`, "int8"},
 	{`^(smallint)[(]\d+[)]`, "int16"},
-	{`^(int)[(]\d+[)]`, "int"},
+	{`^(int)[(]\d+[)]`, "int32"},
 	{`^(bigint)[(]\d+[)]`, "int64"},
 	{`^(char)[(]\d+[)]`, "string"},
 	{`^(enum)[(](.)+[)]`, "string"},
@@ -74,6 +74,6 @@ var TypeMysqlMatchList = []struct {
 	{`^(datetime)[(]\d+[)]`, "time.Time"},
 	{`^(bit)[(]\d+[)]`, "[]uint8"},
 	{`^(text)[(]\d+[)]`, "string"},
-	{`^(integer)[(]\d+[)]`, "int"},
+	{`^(integer)[(]\d+[)]`, "int32"},
 	{`^(timestamp)[(]\d+[)]`, "time.Time"},
 }
